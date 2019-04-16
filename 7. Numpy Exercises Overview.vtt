@@ -1,0 +1,151 @@
+WEBVTT
+
+00:00:05.790 --> 00:00:06.690
+Hello everyone.
+
+00:00:06.690 --> 00:00:09.990
+Welcome to the PI exercises overview lecture.
+
+00:00:10.020 --> 00:00:14.490
+In this brief lecture we're going to quickly go over the exercise questions and how to approach them
+
+00:00:14.540 --> 00:00:14.830
+.
+
+00:00:15.030 --> 00:00:19.180
+Then you'll go ahead and perform the exercises see if you can solve them.
+
+00:00:19.200 --> 00:00:21.810
+And after that we'll have a lecture on the solutions.
+
+00:00:21.810 --> 00:00:25.720
+Let's go ahead and jump to the exercise notebook and quickly go over the questions.
+
+00:00:25.950 --> 00:00:26.210
+All right.
+
+00:00:26.210 --> 00:00:30.510
+Here we are at the PI exercises notebook which you're going to go ahead and do it.
+
+00:00:30.510 --> 00:00:36.720
+Just answer the questions or follow the instructions in bold and you'll see that there's actually output
+
+00:00:36.780 --> 00:00:42.120
+arrays for you or output answers for you which are the answers you should get.
+
+00:00:42.120 --> 00:00:47.940
+Keep in mind that if you actually run the cell that has the direct output below you will overwrite the
+
+00:00:47.940 --> 00:00:48.840
+output.
+
+00:00:48.840 --> 00:00:53.800
+So for instance if you're saying create an array of 10 zeros hopefully you remember from the lectures
+
+00:00:53.820 --> 00:00:54.730
+how to do that.
+
+00:00:54.870 --> 00:01:01.160
+But if you have code here such as print hello and run that code you will no longer see this output.
+
+00:01:01.200 --> 00:01:04.680
+So keep that in mind as you're running through this exercises.
+
+00:01:04.700 --> 00:01:05.290
+All right.
+
+00:01:05.400 --> 00:01:11.760
+So basically we'll start off with asking you how to create some arrays some array of integers some array
+
+00:01:11.850 --> 00:01:19.770
+of identity matrices three by three Matrix etc. Some random number matrices and then I'll ask you to
+
+00:01:19.770 --> 00:01:21.470
+create this following matrix.
+
+00:01:21.480 --> 00:01:27.620
+So keep in mind that you should insert cells here in order to not delete the output.
+
+00:01:27.660 --> 00:01:31.340
+Then I'll ask you to create an array of 20 line nearly spaced points between 0 1.
+
+00:01:31.350 --> 00:01:36.360
+So just go ahead and follow the instructions here and pay careful attention to not overwrite the output
+
+00:01:36.360 --> 00:01:36.450
+.
+
+00:01:36.450 --> 00:01:42.600
+If you're not ready to overwrite it yet then we'll talk about pi indexing and selection where it I'll
+
+00:01:42.600 --> 00:01:44.520
+give you a few matrices.
+
+00:01:44.610 --> 00:01:46.950
+In this case it's just actually one matrix.
+
+00:01:46.950 --> 00:01:48.630
+This one through 25.
+
+00:01:48.630 --> 00:01:50.600
+That's a five by five matrix.
+
+00:01:50.730 --> 00:01:56.540
+And I will ask you to grab chunks from that matrix and notice here I have given you an extra cells since
+
+00:01:56.550 --> 00:01:59.040
+these are a little trickier and you need the reference.
+
+00:01:59.040 --> 00:02:05.040
+So go ahead and write your code here and that reproduces the output in the cell below and be careful
+
+00:02:05.070 --> 00:02:07.260
+not to actually write your code here.
+
+00:02:07.260 --> 00:02:10.570
+Otherwise you'll overwrite the output that you're trying to replicate.
+
+00:02:10.650 --> 00:02:15.040
+And if you get it wrong the first time you don't remember what you're actually trying to answer.
+
+00:02:15.120 --> 00:02:17.390
+So again just write the code here in these cells.
+
+00:02:17.400 --> 00:02:20.100
+That way you don't overwrite the output itself.
+
+00:02:20.220 --> 00:02:20.660
+OK.
+
+00:02:20.760 --> 00:02:25.500
+And then through those exercises you're going to be trying to grab the chunks shown here as the answers
+
+00:02:25.500 --> 00:02:25.880
+.
+
+00:02:26.190 --> 00:02:32.180
+Then in that same matrix or that reference that same matrix you'll get the sum of all the values get
+
+00:02:32.190 --> 00:02:36.720
+the standard deviation of all the values and then get some the sum of all the columns in that matrix
+
+00:02:36.990 --> 00:02:37.320
+.
+
+00:02:37.380 --> 00:02:37.970
+All right.
+
+00:02:38.070 --> 00:02:38.880
+That's it.
+
+00:02:38.880 --> 00:02:39.690
+Best of luck.
+
+00:02:39.780 --> 00:02:40.770
+And coming up next.
+
+00:02:40.770 --> 00:02:43.700
+Are these solutions to these dumb pie exercises.
+
+00:02:43.710 --> 00:02:45.600
+Thanks everyone and I'll see at the next lecture

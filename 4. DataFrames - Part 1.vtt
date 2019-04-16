@@ -1,0 +1,610 @@
+WEBVTT
+
+00:00:05.850 --> 00:00:10.470
+Hello everyone and welcome to the data frame's lecture and this lecture we're going to finally learn
+
+00:00:10.470 --> 00:00:15.170
+about data frames building off of the serious object data frames.
+
+00:00:15.180 --> 00:00:17.800
+It's going to be their main tool when working with pandas.
+
+00:00:17.970 --> 00:00:21.680
+Let's go ahead and jump to the Jupiter notebook to see how it all works.
+
+00:00:21.690 --> 00:00:22.020
+All right.
+
+00:00:22.020 --> 00:00:24.410
+Here I am at the Jupiter Notebook.
+
+00:00:24.450 --> 00:00:29.940
+We're going to go ahead and say important some pies and P and import pandas PD and I'm going to do one
+
+00:00:29.940 --> 00:00:35.880
+last thing here to save from them Pied-Bot random import Rand and.
+
+00:00:36.350 --> 00:00:38.370
+And then I'm going to go out and set a seed.
+
+00:00:38.370 --> 00:00:42.660
+And what a seed means is just to make sure that we get the same random numbers.
+
+00:00:42.660 --> 00:00:45.510
+That way if you're following me you'll see the same random numbers.
+
+00:00:45.540 --> 00:00:49.260
+I see she can go in and say that random seed.
+
+00:00:49.290 --> 00:00:49.550
+All right.
+
+00:00:49.590 --> 00:00:57.840
+Let's go and explore the different command and the ADF is equal to PD data frame and you can actually
+
+00:00:57.840 --> 00:01:01.460
+use tab here in Jupiter and up to autocomplete this.
+
+00:01:01.770 --> 00:01:05.200
+And notice that the EFIS capitalize on Windu shift tab.
+
+00:01:05.200 --> 00:01:10.770
+Check out the docstring and the initial signature for this PD data frame.
+
+00:01:10.770 --> 00:01:16.830
+We have a data argument and an index argument just like we did for series but then we have this additional
+
+00:01:16.830 --> 00:01:18.210
+columns arguments.
+
+00:01:18.450 --> 00:01:23.130
+Let's go ahead and build this up with some random data and we'll see what a data frame actually looks
+
+00:01:23.130 --> 00:01:24.000
+like.
+
+00:01:24.000 --> 00:01:31.090
+First thing I'm going to do is pass in that data arguments and I'm actually going to call Ranz and 5
+
+00:01:31.110 --> 00:01:37.620
+comma 4 and then the next ones you want to pass is the index in the index.
+
+00:01:37.620 --> 00:01:42.650
+We can just make that a list of characters here.
+
+00:01:42.660 --> 00:01:48.850
+I'm going to go in and say A B C D E.
+
+00:01:49.320 --> 00:01:53.950
+And then finally for the columns I'm going to go ahead and say the x y z.
+
+00:01:54.120 --> 00:02:05.810
+So I'll say w x y z going to go ahead and run this and then passen the data just just display and then
+
+00:02:05.820 --> 00:02:07.020
+we get a nice display.
+
+00:02:07.050 --> 00:02:12.370
+And this probably looks and feels a lot like Excel entries and a deeper notebook and that's good.
+
+00:02:12.540 --> 00:02:18.060
+If you're using another ID editor you may not get such a nice crisp display but you should get a printed
+
+00:02:18.060 --> 00:02:21.560
+output that looks similar to this.
+
+00:02:21.630 --> 00:02:22.060
+All right.
+
+00:02:22.110 --> 00:02:31.130
+So basically what we have here is a list of columns w x y z and corresponding rows A B C D E.
+
+00:02:31.170 --> 00:02:35.240
+Now each of these columns is actually just a panda's series.
+
+00:02:35.250 --> 00:02:42.060
+So W is a panda series as well as X Y and Z and they all share a common index and that's basically all
+
+00:02:42.060 --> 00:02:46.350
+data frame is it's just a bunch of series that share an index.
+
+00:02:46.350 --> 00:02:51.830
+Let's go ahead and show how we can use indexing and selection actually grab one of these serious objects
+
+00:02:52.080 --> 00:02:59.280
+or several of these columns out one way and the main way to do this is by saying DMF and then using
+
+00:02:59.340 --> 00:03:02.920
+Rackett notation and then passing in the column name.
+
+00:03:02.940 --> 00:03:05.590
+In this case let's go ahead and grab the W column.
+
+00:03:05.610 --> 00:03:12.180
+So as a string of pass w and this returns the W column and now take a look at the output.
+
+00:03:12.180 --> 00:03:14.590
+Now this actually looks like a series.
+
+00:03:14.590 --> 00:03:16.950
+And that's because that's exactly what W column is.
+
+00:03:16.950 --> 00:03:20.160
+It's just a series and you can actually confirm this by saying.
+
+00:03:20.160 --> 00:03:27.870
+Type of d f of W and it shows that it's Panas that core that series that series.
+
+00:03:27.870 --> 00:03:33.940
+If I just say type on the DFA object itself I will get a data frame out.
+
+00:03:34.260 --> 00:03:39.420
+So again just to reiterate that fact that a data frame is just a bunch of series that share the same
+
+00:03:39.450 --> 00:03:40.600
+index.
+
+00:03:40.590 --> 00:03:45.270
+Now there's two different ways you can grab a column from a data frame.
+
+00:03:45.300 --> 00:03:49.780
+The main way and the way should always do it is using this sort of bracket notation and then passing
+
+00:03:49.800 --> 00:03:51.090
+the column name.
+
+00:03:51.090 --> 00:03:56.640
+However if you're really familiar of sequel a lot of times you're selecting a column you pass in a table
+
+00:03:57.090 --> 00:03:58.470
+and then the column name.
+
+00:03:58.530 --> 00:04:04.280
+This actually also works for pantless you could say dot and then the column name.
+
+00:04:04.440 --> 00:04:10.020
+However I would recommend that you don't use this because it may get confused with the various methods
+
+00:04:10.020 --> 00:04:11.870
+that are available off of the data frame.
+
+00:04:11.940 --> 00:04:18.160
+For instance if I say DFA dot and then click tab I see a whole bunch of methods available for me.
+
+00:04:18.480 --> 00:04:22.980
+And those are a bunch of methods that we're going to learn about as we learn more about pandas but what
+
+00:04:22.980 --> 00:04:28.050
+may happen is that one of these methods gets overwritten by a column name and then Panther is going
+
+00:04:28.050 --> 00:04:32.420
+to get confused whether you're asking for a method or an actual column name.
+
+00:04:32.430 --> 00:04:38.410
+So you should do to avoid that as always is a sort of bracket notation when requesting a column.
+
+00:04:38.970 --> 00:04:39.500
+OK.
+
+00:04:39.510 --> 00:04:44.590
+If you want multiple columns back then you can go ahead and pasan a list of columns.
+
+00:04:44.820 --> 00:04:49.800
+So know that I pass in my brackets and then I'm going to pass and a list of column names which is going
+
+00:04:49.800 --> 00:04:52.170
+to result in another set of brackets here.
+
+00:04:52.200 --> 00:05:02.970
+For instance if I want to columns W and Z I pass on a list here highlighted WNC and I get back a data
+
+00:05:02.970 --> 00:05:05.520
+frame containing those two series.
+
+00:05:05.520 --> 00:05:10.620
+And that means when I ask for multiple columns I'm actually getting back a data frame I asked for just
+
+00:05:10.620 --> 00:05:13.240
+a single column that I will get back a series.
+
+00:05:13.380 --> 00:05:17.510
+And in the Jupiter note book system that's the noted by the way the output is displayed.
+
+00:05:17.990 --> 00:05:25.540
+OK let's go ahead and move on to creating a new column Palla's supports creation of new columns by just
+
+00:05:25.560 --> 00:05:29.390
+specifying the column as if it already exists.
+
+00:05:29.400 --> 00:05:31.100
+For instance new.
+
+00:05:31.140 --> 00:05:34.550
+Now if I run this I'll get an error and it's a keeper.
+
+00:05:34.570 --> 00:05:37.500
+The scroll all the way down here is say Kear new.
+
+00:05:37.680 --> 00:05:42.560
+And it basically just is trying to tell you that it can't find it that there is no key new there.
+
+00:05:42.570 --> 00:05:50.190
+However when you're creating a hash tag you let out and put this back in when you're creating a new
+
+00:05:50.190 --> 00:05:51.200
+column.
+
+00:05:51.210 --> 00:05:56.280
+You can actually define it as if it already exists and then on the right hand side of the equal sign
+
+00:05:56.850 --> 00:06:05.610
+use other columns with arithmetic in order to pull off a new column for instance you can say DSF new
+
+00:06:05.610 --> 00:06:09.970
+column as if it already exists is equal to DFW Plus the fly.
+
+00:06:10.150 --> 00:06:11.710
+And this will run with no error.
+
+00:06:11.910 --> 00:06:18.780
+And now if I check out DF if that new column is actually in place there and for removing columns you
+
+00:06:18.780 --> 00:06:19.890
+can say DFT.
+
+00:06:19.920 --> 00:06:28.020
+Drop you can say deific drop and pass in the actual column name you want to drop.
+
+00:06:28.020 --> 00:06:31.430
+Now if you just do this by itself you'll get an error.
+
+00:06:31.500 --> 00:06:35.340
+And let's go in and check out what that error is will say value error.
+
+00:06:35.390 --> 00:06:36.120
+We scroll down.
+
+00:06:36.120 --> 00:06:40.540
+It says labels new not contained in Access.
+
+00:06:40.620 --> 00:06:47.660
+And if I click shift tab on the drop method notice that by default it says access is equal to zero access
+
+00:06:47.670 --> 00:06:52.390
+equal to zero for the drop method refers to the index.
+
+00:06:52.500 --> 00:07:01.050
+If I actually want to refer to the columns I need to specify access is equal to 1 and then it will drop
+
+00:07:01.680 --> 00:07:04.430
+that new column here.
+
+00:07:04.830 --> 00:07:10.260
+Now there's two things to note when using this DFT drop the first thing to know is that this doesn't
+
+00:07:10.260 --> 00:07:15.900
+happen in place meaning I'm not actually affecting the state of frame unless I specifically specify
+
+00:07:16.070 --> 00:07:18.370
+to this to occur in place.
+
+00:07:18.470 --> 00:07:20.450
+I want to show you what I mean by that.
+
+00:07:20.610 --> 00:07:28.380
+I've called this line D-flat drop you access equal to 1 if I called DMF I'll see that I still have that
+
+00:07:28.380 --> 00:07:29.910
+new column.
+
+00:07:29.910 --> 00:07:36.030
+That means I need to actually specify as an argument to shift have to show it the in-place argument
+
+00:07:36.630 --> 00:07:42.840
+in many many Pandurs methods will require this in place arguments to be set to true.
+
+00:07:42.990 --> 00:07:48.450
+And the reason panderers does that is that for you not to accidentally lose information in case you've
+
+00:07:48.450 --> 00:07:53.820
+done a bunch of adjustments to your data you don't want to accidentally lose it.
+
+00:07:53.820 --> 00:07:59.520
+So Pandurs requires you to say in-place equals true if you actually want a lot of these changes to stay
+
+00:07:59.550 --> 00:08:01.260
+and occur in place.
+
+00:08:01.380 --> 00:08:07.800
+And now if I call DFI running the cell notice that new column is now permanently removed because it
+
+00:08:07.800 --> 00:08:15.960
+occurred in place and something to note here is that we can also use the left drop to drop rows for
+
+00:08:15.960 --> 00:08:16.450
+instance.
+
+00:08:16.470 --> 00:08:19.930
+Let's go out and use this to drop the e row.
+
+00:08:20.130 --> 00:08:28.290
+I'll say DF got drop I pass an E and I can also say axis is equal to zero.
+
+00:08:28.290 --> 00:08:30.870
+Now remember you actually don't have to add that in as an argument.
+
+00:08:30.870 --> 00:08:32.230
+That's the default.
+
+00:08:32.820 --> 00:08:40.950
+So let's go and just say the drop E and there we've been able to drop the e since Access is equal to
+
+00:08:40.950 --> 00:08:41.410
+zero.
+
+00:08:41.460 --> 00:08:45.260
+And it works either way I could say X sequel to 0 and this will work again.
+
+00:08:45.660 --> 00:08:48.140
+And note here I'm not doing this in place.
+
+00:08:48.360 --> 00:08:48.880
+OK.
+
+00:08:49.020 --> 00:08:54.930
+Sometimes a point of confusion is why are the rows zero as far as are access and why are the columns
+
+00:08:54.960 --> 00:08:58.880
+one where the reference actually comes back to pi.
+
+00:08:59.010 --> 00:09:06.850
+Since data frames are essentially just fancy index markers on top of a PI array to show this.
+
+00:09:07.080 --> 00:09:14.750
+I can say DF thought shape just like we did of a pipe matrix and no if that shape is a tuple for a tooth
+
+00:09:14.800 --> 00:09:19.750
+imaginal matrix here and at the zero index or the number of rows.
+
+00:09:19.890 --> 00:09:23.020
+So if I say ZF here I have five rows.
+
+00:09:23.070 --> 00:09:29.990
+A B C and D E and then on the index one I have four columns w x y z.
+
+00:09:30.150 --> 00:09:37.530
+Which is why rows are referred to as the zero axis and columns are referred to as the one axis because
+
+00:09:37.530 --> 00:09:43.020
+it's directly taken from the shape just as you would have a pie array.
+
+00:09:43.020 --> 00:09:43.880
+OK.
+
+00:09:43.920 --> 00:09:46.260
+Now let's talk about selecting rows.
+
+00:09:46.290 --> 00:09:51.840
+We've talked about selecting columns which you just do by saying DMF and in brackets you passen the
+
+00:09:51.840 --> 00:09:53.280
+column name.
+
+00:09:53.280 --> 00:10:01.350
+Or if you want many columns you pasan a list of the column names such as Z and then comma X and it close
+
+00:10:01.350 --> 00:10:02.430
+off that bracket.
+
+00:10:02.430 --> 00:10:07.460
+So I'm passing a list of column names and I return a data frame of those columns.
+
+00:10:07.500 --> 00:10:09.940
+Let's talk about selecting rows.
+
+00:10:10.900 --> 00:10:14.650
+Want to take a look at my data frame again here's my data frame.
+
+00:10:14.650 --> 00:10:18.400
+ABC The E is my rose WXYZ are the columns.
+
+00:10:18.400 --> 00:10:25.120
+There's two ways to select rows in a data frame and you have to call a method off of this.
+
+00:10:25.120 --> 00:10:26.900
+And there's two methods to use.
+
+00:10:26.890 --> 00:10:31.040
+One is Loek EHLO see for location.
+
+00:10:31.690 --> 00:10:38.030
+And this is going to take in a label so you can also do shift tab here to see this property and something
+
+00:10:38.020 --> 00:10:38.540
+to know here.
+
+00:10:38.560 --> 00:10:43.770
+I'm using square brackets which is a little weird but that's the way it works with pandas.
+
+00:10:44.000 --> 00:10:48.920
+You pass in LRC and then you passen in brackets the row you want.
+
+00:10:48.910 --> 00:10:52.030
+For instance if I wanted the row I just passen.
+
+00:10:52.280 --> 00:10:56.210
+See I passen the label of that index and this returns.
+
+00:10:56.240 --> 00:10:58.150
+No a series.
+
+00:10:58.150 --> 00:11:04.310
+And this comes to our second conclusion that not only are all the columns series but the rows are series
+
+00:11:04.300 --> 00:11:06.730
+as well as far as the way they're going to get returns.
+
+00:11:06.880 --> 00:11:09.780
+When you request them in Pandas.
+
+00:11:10.090 --> 00:11:16.140
+Now let's discuss the second way to grab a row which is based off of next position.
+
+00:11:16.510 --> 00:11:17.750
+I can use DFT.
+
+00:11:17.840 --> 00:11:25.180
+I Loek to actually in a numerical index position even if my axes are labeled by strings.
+
+00:11:25.180 --> 00:11:34.310
+For instance if I want see that row I can do that two ways I could either say DF ELO see for a location
+
+00:11:34.380 --> 00:11:42.190
+and in brackets pass the row name which is C or I can say I EHLO see which is index based location and
+
+00:11:42.200 --> 00:11:43.690
+counts what index it says.
+
+00:11:43.690 --> 00:11:45.870
+So 0 1 2.
+
+00:11:46.100 --> 00:11:51.790
+And then on I Alosi hasten to add this also returns that row.
+
+00:11:51.790 --> 00:11:57.250
+And that basically means you have two ways of selecting rows using EHLO see if you want the location
+
+00:11:57.250 --> 00:12:04.220
+or labeled based index or I ellos see if you want the numerical based index.
+
+00:12:04.240 --> 00:12:09.640
+OK let's talk about selecting subsets of rows and columns and this will actually be very familiar to
+
+00:12:09.640 --> 00:12:12.680
+you since we just learned about pi.
+
+00:12:13.250 --> 00:12:21.530
+We can say DFI thought EHLO see if we want to select a subset of rows and columns we can pasan just
+
+00:12:21.520 --> 00:12:25.400
+like we did with Num. Pi using common notation.
+
+00:12:25.390 --> 00:12:28.550
+The row we want and then the column we want.
+
+00:12:28.580 --> 00:12:36.520
+So I want the value at Row be column Y and this returns just a single value there.
+
+00:12:36.550 --> 00:12:43.220
+So if I take a look at my DFA again looking at ráby column y I have this negative 0.8 for I get the
+
+00:12:43.210 --> 00:12:44.610
+same result here.
+
+00:12:44.620 --> 00:12:52.700
+So just like pi you can use this row comma column notation and if you want a subset of this you can
+
+00:12:52.690 --> 00:12:58.950
+say Dhia ellos see and then pasan a list separated by commas.
+
+00:12:59.000 --> 00:13:07.180
+For instance let's say I wanted the subset of a b rows with the W Y columns so basically I wanted this
+
+00:13:07.540 --> 00:13:13.670
+2.7 0.9 and 0.6 5 and negatives are at twenty four.
+
+00:13:13.690 --> 00:13:20.650
+That means I can just pass in a list of the rows I want which in this case is a and b.
+
+00:13:21.700 --> 00:13:31.490
+And then I can pass in a list of the columns I want in this case that's w and y shift enter that and
+
+00:13:31.490 --> 00:13:34.360
+I get the subset return of that data frame.
+
+00:13:34.880 --> 00:13:35.540
+OK.
+
+00:13:35.770 --> 00:13:38.520
+We're going to stop here for now and continue discussion.
+
+00:13:38.530 --> 00:13:44.960
+In part two of the data frame's lecture and this is all in the notebook called Data frames under the
+
+00:13:44.950 --> 00:13:46.700
+panderers folder.
+
+00:13:46.690 --> 00:13:51.610
+Let's get a quick review of what we've learned as far as creating a data frame.
+
+00:13:51.620 --> 00:13:58.540
+You just need to say PD data frame passenger data assin your index and then pass in your column names
+
+00:13:58.540 --> 00:13:58.900
+.
+
+00:13:58.930 --> 00:14:03.670
+Usually we won't be building data Frayne's by hand this manner will actually be reading data from some
+
+00:14:03.670 --> 00:14:08.250
+sort of source like a CSP file but learn how to do data input now put later.
+
+00:14:08.250 --> 00:14:14.030
+For now if you want to mainly create a data frame so you can do it then for selecting columns from a
+
+00:14:14.020 --> 00:14:16.100
+data frame you can say DSF.
+
+00:14:16.100 --> 00:14:22.090
+And then in brackets pass in the column you want or pass in a list of the columns you want remember
+
+00:14:22.180 --> 00:14:25.630
+that each column is actually just a series.
+
+00:14:25.880 --> 00:14:31.430
+You can create new columns based off of old columns by using this sort of arithmetic.
+
+00:14:31.450 --> 00:14:36.040
+Then you can drop columns or rows using DFA that drop.
+
+00:14:36.040 --> 00:14:38.730
+Remember the needs of say in place equals true.
+
+00:14:38.870 --> 00:14:44.820
+If you want the effect to be permanent you say Axis 1 for columns and then Access 0 for rows.
+
+00:14:44.980 --> 00:14:54.460
+And again that comes from this shape tuple 0 index was rows 1 index was columns as far as selecting
+
+00:14:54.460 --> 00:14:56.350
+rows from a data frame.
+
+00:14:56.360 --> 00:14:57.630
+There's two methods here.
+
+00:14:57.640 --> 00:15:03.670
+There is Alosi method which is a labeled based index location or there's the dot.
+
+00:15:03.720 --> 00:15:08.670
+I Alosi which is the integer based index location.
+
+00:15:09.430 --> 00:15:15.100
+And then if you want to select subsets of the data frame you can use dot LOC and passen either values
+
+00:15:15.250 --> 00:15:18.800
+or complete lists to return subsets of the data frame.
+
+00:15:19.330 --> 00:15:22.230
+OK that's it for the very basics of data frames.
+
+00:15:22.420 --> 00:15:26.810
+Coming up next we're going to discuss even more of what you can do if Appin the state of frame such
+
+00:15:26.800 --> 00:15:28.880
+as using conditional selection.
+
+00:15:28.880 --> 00:15:30.580
+All right thanks everyone.
+
+00:15:30.590 --> 00:15:31.570
+I'll see you at the next lecture
